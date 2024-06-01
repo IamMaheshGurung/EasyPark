@@ -5,5 +5,7 @@
     margin-top: 8vh;
 }
 .heading{
-    
+    display: flex;
+    justify-content: center;
+    font-size: 10vh;
 }

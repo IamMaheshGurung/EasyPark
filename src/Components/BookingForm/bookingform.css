@@ -1,0 +1,42 @@
+.BookingForm{
+    text-align: center;
+    border: 2px solid wheat;
+    max-height: 70vh;
+    max-width: 60vh;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+
+    
+}
+.detailForm{
+    display:grid;
+    padding: 10px;
+    
+    justify-content: center;
+}
+.detailForm label{
+    font-size: 3vh;
+}
+.detailForm input{
+    font-size: 2vh;
+    border:2px solid wheat;
+    width: 30vh
+}
+.submit{
+    
+    margin-top: 20px;
+    max-width: 7vh;
+    background: rgb(58, 44, 24);
+    border: none;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
