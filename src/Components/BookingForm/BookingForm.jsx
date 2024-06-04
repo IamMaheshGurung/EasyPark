@@ -1,21 +1,31 @@
-import React from 'react'
+import React, {useState} from 'react'
 import './bookingform.css'
 const BookingForm = () => {
+  let [detail, setDetail] = useState({Name:"",Type:"", Mob:""});
+  let [isSubmitted, setIsSubmitted]=useState(false)
+  const hDefault = (event)=>{
+    event.preventDefault();
+    setIsSubmitted(true)
+    setTimeout(()=>setIsSubmitted(false), 3000);
+  }
   return (
     <div className='BookingForm'>
-      <h2>Kindly fill small detail</h2>
-        <div className='detailForm'>
-            <label for="name" className='name' required>Name:</label>
-            <input type="text" name="name" placeholder='enter your name'/>
-            <label for="vehicle" className='Vehicle' >Type of Vehicle</label>
-            <input type="email" name="email" placeholder='your email' required/>
-            <label for="mobile" className='mobile'>Mobile Number</label>
-            <input type="phone" name="mobile" placeholder='mobile number' required/>
-            
-        
-        </div>
-        <button className='submit' type='submit'>Submit</button>
-
+      {isSubmitted ? (
+        <h2></h2>
+      ) : (
+        <>
+          <h2>Kindly fill small detail</h2>
+          <form className='detailForm' onSubmit={hDefault}>
+              <label htmlFor="name" className='name'  required>Name:</label>
+              <input type="text" name="name" placeholder={detail.Name} value={detail.Name} onChange={e=>setDetail({...detail, Name:e.target.value})}/>
+              <label htmlFor="vehicle" className='Vehicle' >Type of Vehicle</label>
+              <input type="text" name="vehicle" placeholder={detail.Type} value={detail.Type} onChange={e=>setDetail({...detail, Type:e.target.value})}/>
+              <label htmlFor="mobile" className='mobile'>Mobile Number</label>
+              <input type="phone" name="mobile" placeholder={detail.Mob} value={detail.Mob} onChange={e=>setDetail({...detail, Mob:e.target.value})}/>
+              <button type='submit' id="button">Submit</button>
+          </form>
+        </>
+      )}
     </div>
   )
 }

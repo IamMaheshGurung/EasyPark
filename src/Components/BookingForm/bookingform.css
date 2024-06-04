@@ -17,8 +17,9 @@
 .detailForm{
     display:grid;
     padding: 10px;
-    
+    padding-bottom: 3vh;
     justify-content: center;
+    margin-bottom: 2vh;
 }
 .detailForm label{
     font-size: 3vh;
@@ -39,4 +40,11 @@
     -moz-border-radius: 10px;
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
+}
+#button{
+    text-align: center;
+    margin-top: 2vh;
+    height:3vh;
+    font-size: medium;
+    font-weight: bold;
 }
