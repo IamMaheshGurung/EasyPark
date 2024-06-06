@@ -1,25 +1,22 @@
-import React, {useState} from 'react'
-
-
+import React, { useState, useEffect } from 'react';
 const Token= () => {
- const [customer, setCustomer] = useState({customerName:"Mahesh Gurung", customerAge:28, SlotNo:3})
-  
+    const [costumer, setCostumer] = useState({costumerName:"Mahesh Gurung", costumerAge:28, SlotNo:3})
+    
     useEffect(() => {
-      console.log(`${customer.SlotNo}`)
+      console.log(`${costumer.SlotNo}`)
     
       return () => {
         console.log("done")
       }
-    }, [customer.SlotNo]);
+    }, [costumer.SlotNo]);
+  
+    const firstName = costumer.costumerName.split(' ')[0];
+  
     return (
-    <div>
-        <h1>Hello {customer.customerName}</h1>
-        <p> you are on {customer.SlotNo}</p>
-        <h2>Have a nice day {customer.customerName.split(" ")[0]}</h2>
-      
-    </div>
-  )
-}
-
-export default Token
-
+      <div>
+        <h1>Hello {firstName}</h1>
+        <p> you are on {costumer.SlotNo}</p>
+        <h2>Have a nice day {firstName}</h2>
+      </div>
+    )
+  }

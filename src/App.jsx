@@ -4,7 +4,7 @@ import BookingForm from './Components/BookingForm/BookingForm'
 import Hero from './Components/Hero/Hero'
 import Navbar from './Components/NavBar/Navbar'
 import EgCompo from './Components/EgCompo'
-import Token from './Components/TokenGen/Token.jsx'
+import Token from './Components/TokenGen/Token'
 const App = () => {
   return (
     <div>
