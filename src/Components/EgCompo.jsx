@@ -49,8 +49,6 @@ const EgCompo = () => {
                  return <li key={fruit.id}>{fruit.value}</li>
                 })}
               </ul>
-              
-            
             </div>
           )
     }
