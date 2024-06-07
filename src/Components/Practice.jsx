@@ -2,7 +2,13 @@ import React, {useEffect, useState} from 'react'
 
 const Practice = () => {
     const [count, setCount] = useState(0)
-    useEffect(callbackfunction,[])
+    useEffect(()=> {
+        setTimeout(()=>
+        {
+            setCount(count => count+1)
+        },2000)
+        
+    },[])
 
   return (
     

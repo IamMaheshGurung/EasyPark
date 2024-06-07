@@ -19,8 +19,7 @@ const App = () => {
       
       
       
-          <Token/>
-      
+      <Token/>
       <Practice/>
 
     </div>
