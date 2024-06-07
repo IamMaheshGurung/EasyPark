@@ -1,22 +1,27 @@
 import React from 'react'
 import Header from './Components/Header/Header'
-import BookingForm from './Components/BookingForm/BookingForm'
+
 import Hero from './Components/Hero/Hero'
 import Navbar from './Components/NavBar/Navbar'
 import EgCompo from './Components/EgCompo'
-import Token from './Components/TokenGen/Token'
+import Token from './Components/Token'
+
 const App = () => {
   return (
     <div>
-      <Header/>
-      <Navbar/>
-      <Token/>
-      
-      <div>
-        <BookingForm/>
-        <Hero weekday="Sunday"/>
+      <div className='header'>
+        <Header/>
       </div>
-      <EgCompo/>
+      <div className='Navbar'>
+        <Navbar/>
+      </div>
+      <Hero weekday="Sunday"/>
+      
+      
+      
+          <Token/>
+      
+      
 
     </div>
   )

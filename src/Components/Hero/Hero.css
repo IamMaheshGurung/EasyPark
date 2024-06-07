@@ -1,0 +1,18 @@
+.background {
+    align-items: center;
+    text-align: center;
+    
+}
+.HeroImg{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+    gap:10px;
+    margin-top: 2vh;
+    margin-bottom: 10vh;
+}
+.HeroImg img{
+    max-width: 50vh;
+    max-width: 40vh;
+}

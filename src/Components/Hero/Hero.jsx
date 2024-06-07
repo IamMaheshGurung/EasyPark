@@ -1,13 +1,22 @@
 import React from 'react'
 import './Hero.css'
+import imgOne from "../../assets/park1.jpeg"
+import imgTwo from "../../assets/park2.jpeg"
+import imgThree from "../../assets/park3.jpeg"
 const Hero = (props) => {
   return (
-    <div className="PerTimePrice">
-        <h1>Prices</h1>
-        <div className='Price'></div>
-        <h2>200 yen per 30 Mins</h2>
-        <h2>500 yen for 2 hours</h2>
-        <h2>1400 yen for 24 hours and {props.weekday}</h2>
+    <div className="background">
+      <h1>Parking are made easy here</h1>
+      <div className='HeroImg'> 
+        <img id='img1' alt="" src={imgOne}/>
+        <img id='img2' alt="" src={imgTwo}/>
+        <img id='img3' alt="" src={imgThree}/>
+
+
+      </div>
+     
+
+       
     </div>
   )
 }
