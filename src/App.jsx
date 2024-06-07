@@ -1,9 +1,9 @@
 import React from 'react'
 import Header from './Components/Header/Header'
-
+import Practice from './Components/Practice'
 import Hero from './Components/Hero/Hero'
 import Navbar from './Components/NavBar/Navbar'
-import EgCompo from './Components/EgCompo'
+
 import Token from './Components/Token'
 
 const App = () => {
@@ -21,9 +21,11 @@ const App = () => {
       
           <Token/>
       
-      
+      <Practice/>
 
     </div>
+    
+
   )
 }
 
