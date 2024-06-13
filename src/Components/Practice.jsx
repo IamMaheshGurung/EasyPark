@@ -1,33 +1,34 @@
-import React, {useEffect, useRef, useState} from 'react'
+import React, { useReducer } from 'react'
+const initialState = {Qty:10};
+const reducer = (state, action) => {
+  if(action.type==="add"){
+    return ({Qty : state.Qty + 1});
+  }
+  else if(action.type === "minus"){
+    if(state.Qty===0){
+      return ({Qty : "No"});
+    }
+    return ({Qty : state.Qty - 1});
+  }
+  else{
+    return state;
+  }
+}
 
 const Practice = () => {
-
-    const choice = useRef()
-    
-    const [count, setCount] = useState(0);
-    const bClicked = () => {
-      setCount(parseInt(choice.current.value));
-      document.body.style.background = "blue";
-    };
-    const value = useRef(0);
-
-    useEffect(()=>{
-      value.current = value.current+1;
-    });
-
-   
+  const [state, dispatch] = useReducer(reducer, initialState);
   return (
-    
     <div>
-        <input type="number" ref={choice}/>
-        <button onClick={bClicked}>Starting Number</button>
-        <button onClick={()=> setCount(count=> count+1)}>Plus</button>
-        <h1> I have rendered {count} times</h1>
-        <button onClick={()=> setCount(count=> count-1)}>Minus</button>
-        <h1> {value.current}</h1>
+      <h1> I have {state.Qty} apple Now</h1>
+      <button onClick ={()=>{
+        (dispatch({type:"add"}));
+      }}>Add Apples</button>
+      <button onClick={()=>{
+        (dispatch({type:"minus"}));
+      }}>Give Apple</button>
       
     </div>
   )
 }
 
-export default Practice;
+export default Practice
