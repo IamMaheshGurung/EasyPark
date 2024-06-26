@@ -1,6 +1,9 @@
-import React, { useState, useEffect} from 'react'
+import React, { useState, useEffect, useRef} from 'react'
 
 const Practice = () => {
+  const myRef = useRef("");
+  console.log(myRef);
+  const [name,setName] = useState("Mahesh Gurung")
   const [count, setCount] = useState(10);
   const [message, setMessage] = useState("Parking is empty");
   
@@ -30,14 +33,23 @@ const Practice = () => {
       else{
         return count;
       }
+      
     })
+    myRef.current.style.color="Blue"
+  }
+  
+  const reset = () =>{
+    setName("Mahesh Gurung")
+    myRef.current.focus()
   }
   return (
     <div>
-      <h1>{count} Slots remaining in this Parking</h1>
+      <h1  ref={myRef} >{count} Slots remaining in this Parking</h1>
       <h1>{message}</h1>
+      <input ref={myRef} type="text" value={name} onChange={(e)=>setName(e.target.value)}/>
       <button onClick={decreaseCount}>Book</button>
       <button onClick={increaseSlot}>Exit</button>
+      <button onClick={reset}>RESET</button>
       
     </div>
   )
