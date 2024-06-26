@@ -1,31 +1,43 @@
-import React, { useReducer } from 'react'
-const initialState = {Qty:10};
-const reducer = (state, action) => {
-  if(action.type==="add"){
-    return ({Qty : state.Qty + 1});
-  }
-  else if(action.type === "minus"){
-    if(state.Qty===0){
-      return ({Qty : "No"});
-    }
-    return ({Qty : state.Qty - 1});
-  }
-  else{
-    return state;
-  }
-}
+import React, { useState, useEffect} from 'react'
 
 const Practice = () => {
-  const [state, dispatch] = useReducer(reducer, initialState);
+  const [count, setCount] = useState(10);
+  const [message, setMessage] = useState("Parking is empty");
+  
+
+  useEffect ( ()=> {
+    setMessage(count === 0 ? "Parking is Booked" : "Parking is Empty");
+    
+    console.log("Component rendered")
+  },[count])
+  
+  const decreaseCount =()=>{
+    setCount((count) => {
+      if(count<=0){
+        return 0;}
+      else{
+        return count-1;
+  }
+  });
+  };
+
+  const increaseSlot = () =>{
+    setCount((count)=>{
+      if(count<10){
+        
+        return count+1;
+      }
+      else{
+        return count;
+      }
+    })
+  }
   return (
     <div>
-      <h1> I have {state.Qty} apple Now</h1>
-      <button onClick ={()=>{
-        (dispatch({type:"add"}));
-      }}>Add Apples</button>
-      <button onClick={()=>{
-        (dispatch({type:"minus"}));
-      }}>Give Apple</button>
+      <h1>{count} Slots remaining in this Parking</h1>
+      <h1>{message}</h1>
+      <button onClick={decreaseCount}>Book</button>
+      <button onClick={increaseSlot}>Exit</button>
       
     </div>
   )
